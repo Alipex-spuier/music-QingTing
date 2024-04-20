@@ -16,12 +16,12 @@ from utils.inference import load_image
 from utils.preprocessor import preprocess_input
 
 def process_image(image):
-
+    rgb_image = None
     try:
         # parameters for loading data and images
-        detection_model_path = './trained_models/detection_models/haarcascade_frontalface_default.xml'
-        emotion_model_path = './trained_models/emotion_models/fer2013_mini_XCEPTION.102-0.66.hdf5'
-        gender_model_path = './trained_models/gender_models/simple_CNN.81-0.96.hdf5'
+        detection_model_path = '/ekholabs/face-classifier/trained_models/detection_models/haarcascade_frontalface_default.xml'
+        emotion_model_path = '/ekholabs/face-classifier/trained_models/emotion_models/fer2013_mini_XCEPTION.102-0.66.hdf5'
+        gender_model_path = '/ekholabs/face-classifier/trained_models/gender_models/simple_CNN.81-0.96.hdf5'
         emotion_labels = get_labels('fer2013')
         gender_labels = get_labels('imdb')
         font = cv2.FONT_HERSHEY_SIMPLEX
@@ -87,8 +87,9 @@ def process_image(image):
 
     bgr_image = cv2.cvtColor(rgb_image, cv2.COLOR_RGB2BGR)
 
-    dirname = 'result'
+    dirname = '/ekholabs/face-classifier/result'
     if not os.path.exists(dirname):
         os.mkdir(dirname)
 
     cv2.imwrite(os.path.join(dirname, 'predicted_image.png'), bgr_image)
+    return {'emotion':emotion_text,'gender':gender_text}

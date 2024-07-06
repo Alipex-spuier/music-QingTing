@@ -12,10 +12,6 @@ services:
     networks:
       - app-network
 
-  face-api:
-    build: ./backend
-    container_name: face-api
-
   db:
     image: mysql:8.0
     container_name: db

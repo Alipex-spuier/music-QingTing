@@ -27,7 +27,7 @@ setup_logging()
 @app.route('/')
 def index():
     app.logger.info('Redirecting to the main website')
-    return redirect("https://ekholabs.ai", code=302)
+    return redirect("https://baidu.com", code=302)
 
 @app.route('/classifyImage', methods=['POST'])
 def upload():
@@ -35,7 +35,6 @@ def upload():
         image = request.files['image'].read()
         result = eg_processor.process_image(image)
         app.logger.info('Image processed successfully.')
-        #return send_file('/ekholabs/face-classifier/result/predicted_image.png', mimetype='image/png')
         return jsonify(result)
     except Exception as err:
         app.logger.error(f'An error has occurred whilst processing the file: {err}')

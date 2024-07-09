@@ -45,6 +45,15 @@ services:
     networks:
       - app-network
 
+  nginx:
+    image: spuieralipex/nginx:v1
+    container_name: nginx
+    ports:
+        - "8081:8081"
+    volumes:
+      - ./music.conf:/etc/nginx/conf.d/music.conf
+      - ./music_files:/var/www/
+
 networks:
   app-network:
     driver: bridge

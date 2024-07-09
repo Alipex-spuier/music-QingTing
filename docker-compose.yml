@@ -15,6 +15,12 @@ services:
     networks:
       - app-network
 
+  face-backend:
+    build: ./faceBackend
+    container_name: faceBackend
+    ports:
+      - "8084:8084"
+
   db:
     image: mysql:8.0
     container_name: db

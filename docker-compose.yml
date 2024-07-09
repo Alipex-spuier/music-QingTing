@@ -2,7 +2,8 @@ version: '3'
 services:
   backend-api:
     build: ./backend
-    container_name: backend-api
+    container_name: api
+    restart: always
     ports:
       - "8080:8080"
     environment:
@@ -18,12 +19,14 @@ services:
   face-backend:
     build: ./faceBackend
     container_name: faceBackend
+    restart: always
     ports:
       - "8084:8084"
 
   db:
     image: mysql:8.0
     container_name: db
+    restart: always
     ports:
       - "3306:3306"
     environment:
@@ -48,6 +51,7 @@ services:
   nginx:
     image: spuieralipex/nginx:v1
     container_name: nginx
+    restart: always
     ports:
         - "8081:8081"
     volumes:

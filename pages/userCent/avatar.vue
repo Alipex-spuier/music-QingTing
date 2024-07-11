@@ -15,7 +15,7 @@
 			return {
 				imgList: Array.from({
 					length: 151
-				}, (v, k) => `http://170.106.183.24:8081/avatar/${k + 1}.png`),
+				}, (v, k) => this.$basePhotoURL+`/avatar/${k + 1}.png`),
 				avatar:null,
 				authorization:null
 			}

@@ -1,13 +1,15 @@
 import Vue from 'vue'
 import App from './App'
 
+const url = 'http://8.217.178.86'
+
 Vue.config.productionTip = false
 
 App.mpType = 'app'
 
-Vue.prototype.$baseURL = 'http://170.106.183.24:8080'; 
-Vue.prototype.$baseFaceURL = 'http://170.106.183.24:8084'; 
-Vue.prototype.$basePhotoURL = 'http://170.106.183.24:8081'; 
+Vue.prototype.$baseURL = url+':8080'; 
+Vue.prototype.$baseFaceURL = url+':8084'; 
+Vue.prototype.$basePhotoURL = url+':8081'; 
 const app = new Vue({
     ...App
 })

@@ -4,5 +4,5 @@
 ```
 cd backend
 mvn clean install
-sudo docker-compose up -d
+sudo sh ./restart.sh
 ```

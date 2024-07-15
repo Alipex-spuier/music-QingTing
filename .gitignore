@@ -3,7 +3,6 @@ HELP.md
 .DS_Store
 mysql/
 redis/
-music_files/
 # Build directories
 target/
 build/

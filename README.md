@@ -2,7 +2,6 @@
 更新后的音乐后端，添加了用户登陆注册
 # deploy command
 ```
-cd backend
-mvn clean install
+cd music_backend
 sudo sh ./restart.sh
 ```

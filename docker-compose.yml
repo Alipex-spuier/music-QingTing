@@ -56,7 +56,7 @@ services:
         - "8081:8081"
     volumes:
       - ./music.conf:/etc/nginx/conf.d/music.conf
-      - ./music_files:/var/www/
+     # - ./music_files:/var/www/  有问题，映射不出来，去掉就没问题，不知道在哪出问题
 
 networks:
   app-network:

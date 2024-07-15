@@ -1,5 +1,6 @@
 #!/bin/sh
 
+docker-compose down --rmi local
 # Navigate to ./backend directory
 cd ./backend || { echo "Failed to change directory to ./backend"; exit 1; }
 
@@ -24,7 +25,7 @@ cd - || { echo "Failed to change back to the original directory"; exit 1; }
 
 # Execute docker-compose up -d
 echo "Executing sudo docker-compose up -d..."
-sudo docker-compose up -d
+docker-compose up -d
 if [ $? -ne 0 ]; then
   echo "docker-compose up failed."
   exit 1
